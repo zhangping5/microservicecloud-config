@@ -1,0 +1,15 @@
+#必须是UTF-8格式：编码→使用UTF-8编码
+spring:
+  profiles:
+    active:
+      - dev 
+---
+spring:
+  profi1es: dev #开发环境
+  application:
+    name: microervicecloud-config-tb120-dev
+---
+spring:
+  profi1es: test #测试环境
+  application:
+    name: microervicecloud-config-tb120-test 
