@@ -5,7 +5,7 @@ spring:
     - test
 ---
 #开发环境
-server：
+server:
   port: 8201
 spring:
   profi1es: dev 
@@ -17,7 +17,7 @@ eureka:
       defaultZone: http://eureka-dev.com:7001/eureka/
 ---
 #测试环境
-server：
+server:
   port: 8202
 spring:
   profi1es: test 
