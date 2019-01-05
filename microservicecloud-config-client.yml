@@ -4,10 +4,11 @@ spring:
     active:
       - dev 
 ---
+#开发环境
 server：
   port: 8201
 spring:
-  profi1es: dev #开发环境
+  profi1es: dev 
   application:
     name: microervicecloud-config-client
 eureka:
@@ -15,10 +16,11 @@ eureka:
     server-url:
       defaultZone: http://eureka-dev.com:7001/eureka/
 ---
+#测试环境
 server：
   port: 8202
 spring:
-  profi1es: test #测试环境
+  profi1es: test 
   application:
     name: microervicecloud-config-client
 eureka:

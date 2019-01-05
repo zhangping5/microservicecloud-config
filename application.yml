@@ -4,12 +4,14 @@ spring:
     active:
       - dev 
 ---
+#开发环境
 spring:
-  profi1es: dev #开发环境
+  profi1es: dev 
   application:
     name: microervicecloud-config-tb120-dev
 ---
+#测试环境
 spring:
-  profi1es: test #测试环境
+  profi1es: test 
   application:
     name: microervicecloud-config-tb120-test 
