@@ -1,17 +1,15 @@
-#必须是UTF-8格式：编码→使用UTF-8编码
 spring:
   profiles:
     active:
     - test 
 ---
-#开发环境
 spring:
   profi1es: dev 
   application:
     name: microervicecloud-config-tb120-dev
 ---
-#测试环境
 spring:
   profi1es: test 
   application:
-    name: microervicecloud-config-tb120-test 
+    name: microervicecloud-config-tb120-test
+#注：必须是UTF-8格式：编码→使用UTF-8编码
