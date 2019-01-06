@@ -45,7 +45,7 @@ info:
 ---
 #设置端口号
 server:
-  port: 8002
+  port: 8001
 #将该微服务注册到服务注册中心eureka地址（可有多个）
 eureka:
   client:
@@ -53,7 +53,7 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka
   instance:
      prefer-id-address: true  #使用服务的ip地址进行注册                            # 鼠标悬浮到服务注册中心Eureak页面中 Status下的服务名时，显示的地址
-     instance-id: microservicecloud-provider-dept8002       # Status下的服务名（对应服务注册中心Eureak页面中 Status下的服务名）
+     instance-id: microservicecloud-provider-dept8001       # Status下的服务名（对应服务注册中心Eureak页面中 Status下的服务名）
 #整合mybatis 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
@@ -82,4 +82,3 @@ info:
   company.name: www.tb120.com
   build.artifactId: $project.artifactId$
   build.version: $project.version$
-
