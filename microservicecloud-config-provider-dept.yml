@@ -1,0 +1,85 @@
+spring:
+  profiles:
+    active:
+    - test
+---
+#设置端口号
+server:
+  port: 8001
+#将该微服务注册到服务注册中心eureka地址（可有多个）
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+     prefer-id-address: true  #使用服务的ip地址进行注册                            # 鼠标悬浮到服务注册中心Eureak页面中 Status下的服务名时，显示的地址
+     instance-id: microservicecloud-provider-dept8001       # Status下的服务名（对应服务注册中心Eureak页面中 Status下的服务名）
+#整合mybatis 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.tb120.entity                    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+#整合spring    
+spring:
+   profiles: dev
+   application:
+    name: microservicecloud-config-provider-dept            # 设置服务名（对应服务注册中心Eureak页面中 Application）
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB01              # 数据库名称
+    username: root
+    password: ok
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+#完善info信息的描述（避免鼠标点击 服务注册中心Eureak页面中 Status下的服务名时，会跳出错误页面）
+info: 
+  app.name: microservicecloud
+  company.name: www.tb120.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+#设置端口号
+server:
+  port: 8002
+#将该微服务注册到服务注册中心eureka地址（可有多个）
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka
+  instance:
+     prefer-id-address: true  #使用服务的ip地址进行注册                            # 鼠标悬浮到服务注册中心Eureak页面中 Status下的服务名时，显示的地址
+     instance-id: microservicecloud-provider-dept8002       # Status下的服务名（对应服务注册中心Eureak页面中 Status下的服务名）
+#整合mybatis 
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.tb120.entity                    # 所有Entity别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+#整合spring    
+spring:
+   profiles: test
+   application:
+    name: microservicecloud-config-provider-dept            # 设置服务名（对应服务注册中心Eureak页面中 Application）
+   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/cloudDB02              # 数据库名称
+    username: root
+    password: ok
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+#完善info信息的描述（避免鼠标点击 服务注册中心Eureak页面中 Status下的服务名时，会跳出错误页面）
+info: 
+  app.name: microservicecloud
+  company.name: www.tb120.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
